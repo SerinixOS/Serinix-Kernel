@@ -1,0 +1,129 @@
+# Applied upstream
+
+###########################################################################
+# Posted and applied
+###########################################################################
+
+# signal_x86__Delay_calling_signals_in_atomic.patch
+
+###########################################################################
+# Posted
+###########################################################################
+genirq-Provide-generic_handle_domain_irq_safe.patch
+0001-lib-vsprintf-Remove-static_branch_likely-from-__ptr_.patch
+0002-lib-vsprintf-Initialize-vsprintf-s-pointer-hash-once.patch
+locking-Detect-includes-rwlock.h-outside-of-spinlock.patch
+vduse-Remove-include-of-rwlock.h.patch
+
+# Hacks to get ptrace to work.
+signal-Don-t-disable-preemption-in-ptrace_stop-on-PR.patch
+sched-Consider-task_struct-saved_state-in-wait_task_.patch
+
+# Vlastimil Babka [PATCH v2 0/5] mm/slub: fix validation races and cleanup locking
+# 20220823170400.26546-1-vbabka@suse.cz
+0001-mm-slub-move-free_debug_processing-further.patch
+0002-mm-slub-restrict-sysfs-validation-to-debug-caches-an.patch
+0003-mm-slub-remove-slab_lock-usage-for-debug-operations.patch
+0004-mm-slub-convert-object_map_lock-to-non-raw-spinlock.patch
+0005-mm-slub-simplify-__cmpxchg_double_slab-and-slab_-un-.patch
+
+# ifdef RT cleanups.
+# staged to slub
+0003-slub-Make-PREEMPT_RT-support-less-convoluted.patch
+# pending
+0001-preempt-Provide-preempt_-dis-en-able_nested.patch
+0002-dentry-Use-preempt_-dis-en-able_nested.patch
+0003-mm-vmstat-Use-preempt_-dis-en-able_nested.patch
+0004-mm-debug-Provide-VM_WARN_ON_IRQS_ENABLED.patch
+0005-mm-memcontrol-Replace-the-PREEMPT_RT-conditionals.patch
+0006-mm-compaction-Get-rid-of-RT-ifdeffery.patch
+0007-flex_proportions-Disable-preemption-entering-the-wri.patch
+0008-u64_stats-Streamline-the-implementation.patch
+# Wait until after the previous patch is upstream.
+0001-spi-Remove-the-obsolte-u64_stats_fetch_-_irq-users.patch
+0002-net-Remove-the-obsolte-u64_stats_fetch_-_irq-users.patch
+0003-net-Remove-the-obsolte-u64_stats_fetch_-_irq-users.patch
+0004-bpf-Remove-the-obsolte-u64_stats_fetch_-_irq-users.patch
+# Wait until previous four are upstream.
+u64_stat-Remove-the-obsolete-fetch_irq-variants.patch
+
+###########################################################################
+# Post
+###########################################################################
+net-Avoid-the-IPI-to-free-the.patch
+
+###########################################################################
+# X86:
+###########################################################################
+x86__Allow_to_enable_RT.patch
+x86__Enable_RT_also_on_32bit.patch
+
+###########################################################################
+# For later, not essencial
+###########################################################################
+softirq-Use-a-dedicated-thread-for-timer-wakeups.patch
+rcutorture-Also-force-sched-priority-to-timersd-on-b.patch
+tick-Fix-timer-storm-since-introduction-of-timersd.patch
+tpm_tis__fix_stall_after_iowrites.patch
+drivers_block_zram__Replace_bit_spinlocks_with_rtmutex_for_-rt.patch
+locking-lockdep-Remove-lockdep_init_map_crosslock.patch
+
+###########################################################################
+# John's printk queue
+###########################################################################
+printk-Bring-back-the-RT-bits.patch
+0016-printk-add-infrastucture-for-atomic-consoles.patch
+0017-serial-8250-implement-write_atomic.patch
+0018-printk-avoid-preempt_disable-for-PREEMPT_RT.patch
+
+###########################################################################
+# DRM:
+###########################################################################
+0003-drm-i915-Use-preempt_disable-enable_rt-where-recomme.patch
+0004-drm-i915-Don-t-disable-interrupts-on-PREEMPT_RT-duri.patch
+0005-drm-i915-Don-t-check-for-atomic-context-on-PREEMPT_R.patch
+0006-drm-i915-Disable-tracing-points-on-PREEMPT_RT.patch
+0007-drm-i915-skip-DRM_I915_LOW_LEVEL_TRACEPOINTS-with-NO.patch
+0008-drm-i915-gt-Queue-and-wait-for-the-irq_work-item.patch
+0009-drm-i915-gt-Use-spin_lock_irq-instead-of-local_irq_d.patch
+0010-drm-i915-Drop-the-irqs_disabled-check.patch
+Revert-drm-i915-Depend-on-PREEMPT_RT.patch
+
+###########################################################################
+# Lazy preemption
+###########################################################################
+sched__Add_support_for_lazy_preemption.patch
+x86_entry__Use_should_resched_in_idtentry_exit_cond_resched.patch
+x86__Support_for_lazy_preemption.patch
+entry--Fix-the-preempt-lazy-fallout.patch
+arm__Add_support_for_lazy_preemption.patch
+powerpc__Add_support_for_lazy_preemption.patch
+arch_arm64__Add_lazy_preempt_support.patch
+
+###########################################################################
+# ARM/ARM64
+###########################################################################
+0001-arm-Disable-jump-label-on-PREEMPT_RT.patch
+ARM__enable_irq_in_translation_section_permission_fault_handlers.patch
+# arm64-signal-Use-ARCH_RT_DELAYS_SIGNAL_SEND.patch
+tty_serial_omap__Make_the_locking_RT_aware.patch
+tty_serial_pl011__Make_the_locking_work_on_RT.patch
+ARM__Allow_to_enable_RT.patch
+ARM64__Allow_to_enable_RT.patch
+
+###########################################################################
+# POWERPC
+###########################################################################
+powerpc__traps__Use_PREEMPT_RT.patch
+powerpc_pseries_iommu__Use_a_locallock_instead_local_irq_save.patch
+powerpc_kvm__Disable_in-kernel_MPIC_emulation_for_PREEMPT_RT.patch
+powerpc_stackprotector__work_around_stack-guard_init_from_atomic.patch
+POWERPC__Allow_to_enable_RT.patch
+
+# Sysfs file vs uname() -v
+sysfs__Add__sys_kernel_realtime_entry.patch
+
+###########################################################################
+# RT release version
+###########################################################################
+Add_localversion_for_-RT_release.patch
